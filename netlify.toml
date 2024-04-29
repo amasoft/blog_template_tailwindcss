@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build" # Adjust this to your build command
+  publish = "build" # Adjust this to your build output directory
+
+[build.environment]
+  CI = "false" # Disable treating warnings as errors
