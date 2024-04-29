@@ -21,7 +21,7 @@ const Blogcards = ({ blogs, currentPage, selectedCategory, pageSize }) => {
           className="p-5 shadow-lg rounded cursor-pointer"
         >
           <div>
-            <img src={blog.image} className="w-full" />
+            <img src={blog.image} alt="banner" className="w-full" />
           </div>
           <h3 className="mt-4 mb-2 font-bold hover:text-blue-600 cursor-pointer">
             {blog.title}
