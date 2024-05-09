@@ -5,16 +5,19 @@ import SideBar from "../components/SideBar";
 
 const SingleBlog = () => {
   const data = useLoaderData();
-  console.log(data);
+  console.log(1, data);
+  console.log(JSON.stringify(data));
+
   const {
     title,
     image,
     category,
-    author,
+    userName,
     published_date,
     reading_time,
     content,
-  } = data[0];
+  } = data.data;
+  console.log(0, title);
   return (
     <div>
       <div className="py-40 bg-black text-center text-white px-4">
@@ -27,41 +30,19 @@ const SingleBlog = () => {
       <div className="max-w-7xl mx-auto my-12 flex flex-col md:flex-row ">
         <div className="lg:w-3/4 mx-auto">
           <div>
-            <img src={image} alt="" className="w-full mx-auto rounded" />
+            <img src={"image"} alt="" className="w-full mx-auto rounded" />
             <h2 className=" text-3xl mt-8 font-bold mb-4 text-blue-500 cursor-pointer">
               {title}
             </h2>
             <p className="mb-3 text-gray-600">
               <FaUser className="inline-flex items-center mr-2" />
-              {author} | {published_date}
+              {userName} | {published_date}
             </p>
             <p className="mb-3 text-gray-600">
               <FaClock className="inline-flex items-center mr-2" />
               {reading_time}
             </p>
             <p className="text-base text-gray-500 mb-6">{content}</p>
-
-            <div className="text-base text-gray-900 ">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Adipisci totam cupiditate accusantium incidunt magni aliquam
-                nemo nobis, vel, ex sit magnam voluptatibus maxime aspernatur
-                facere commodi earum, pariatur dignissimos fugiat.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Adipisci totam cupiditate accusantium incidunt magni aliquam
-                nemo nobis, vel, ex sit magnam voluptatibus maxime aspernatur
-                facere commodi earum, pariatur dignissimos fugiat.
-              </p>
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Adipisci totam cupiditate accusantium incidunt magni aliquam
-                nemo nobis, vel, ex sit magnam voluptatibus maxime aspernatur
-                facere commodi earum, pariatur dignissimos fugiat.
-              </p>
-            </div>
           </div>
         </div>
         <div className="lg:w-1/2">

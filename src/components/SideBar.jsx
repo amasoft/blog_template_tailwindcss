@@ -1,12 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 const SideBar = () => {
   const [popularBlogs, setPopularBlogs] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/blogs")
-      .then((res) => res.json())
-      .then((date) => setPopularBlogs(date.slice(0, 15)));
+    // fetch("http://localhost:3009/api/v1/post/")
+    //   .then((res) => res.json())
+    //   .then((date) => setPopularBlogs(date.slice(0, 15)));
+
+    function fetchBlogs() {
+      axios
+        .get(`http://localhost:3009/api/v1/post/`)
+        .then((response) => {
+          const data = response.data.data;
+          setPopularBlogs(data.slice(0, 15));
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    }
+    fetchBlogs();
   });
   return (
     <div>

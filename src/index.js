@@ -15,6 +15,10 @@ import Services from "./pages/Services";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import SingleBlog from "./pages/SingleBlog";
+import { QueryClient, QueryClientProvider } from "react-query";
+const queryClient = new QueryClient();
+const BASE_URL = "https://amatech-backend.onrender.com/";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,8 +47,7 @@ const router = createBrowserRouter([
       {
         path: "/blogs/:id",
         element: <SingleBlog />,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/blogs/${params.id}`),
+        loader: ({ params }) => fetch(`${BASE_URL}api/v1/post/${params.id}`),
       },
     ],
   },
@@ -53,7 +56,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <RouterProvider router={router && router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router && router} />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

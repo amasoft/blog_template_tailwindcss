@@ -3,6 +3,7 @@ import Blogcards from "./Blogcards";
 import Pagenation from "./Pagenation";
 import CategorySelection from "./CategorySelection";
 import SideBar from "./SideBar";
+import axios from "axios";
 
 const BlogPages = () => {
   const [blogs, setBlogs] = useState([]);
@@ -10,23 +11,25 @@ const BlogPages = () => {
   const [currentPage, setCurrentpage] = useState(1);
   const [selectedCategory, setselectedcategory] = useState(null);
   const [activeCategory, setActiveCategory] = useState(null);
-
+  const BASE_URL = "https://amatech-backend.onrender.com/";
   useEffect(() => {
-    async function fetchBlogs() {
-      console.log("patrick");
-      //   let url = "http://localhost:5000/blogs";
-      let url = `http://localhost:5000/blogs?pages=${currentPage}$limit=${pageSize}`;
-
-      if (selectedCategory) {
-        url += `&category=${selectedCategory}`;
-      }
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log("blog");
-      console.log(response);
-      setBlogs(data);
+    function fetchBlogs() {
+      axios
+        // .get(`http://localhost:3009/api/v1/post/`)
+        .get(`${BASE_URL}api/v1/post/`)
+        .then((response) => {
+          const data = response.data.data;
+          console.log("blog");
+          console.log(data);
+          console.log(9, data);
+          setBlogs(data); // Assuming setBlogs updates state
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
     }
     fetchBlogs();
+    // }, [currentPage, pageSize, selectedCategory]);
   }, [currentPage, pageSize, selectedCategory]);
   console.log(blogs);
   // page changing btn

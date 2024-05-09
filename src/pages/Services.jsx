@@ -1,4 +1,5 @@
 import React from "react";
+import ProductCard from "../components/ProductCard";
 
 function Services() {
   return (
@@ -8,6 +9,7 @@ function Services() {
           Services Pages
         </h2>
       </div>
+      <ProductCard />
     </div>
   );
 }
