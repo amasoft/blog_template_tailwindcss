@@ -32,7 +32,7 @@ const Navbar = () => {
     <header className="bg-black text-white fixed top-0 left-0 right-0">
       <nav className="px-4 py-4 max-w-7xl mx-auto flex justify-between items-center">
         <a href="/" className="text-xl font-bold text-white">
-          Design<span className="text-orange-400">DK</span>
+          Ama<span className="text-orange-400">PAT</span>
         </a>
         {/* nav items */}
         <ul className="md:flex gap-12 text-lg hidden">
@@ -60,13 +60,13 @@ const Navbar = () => {
           <a href="/" className="hover:text-orange-500">
             <FaTwitter />
           </a>
-          <button
+          {/* <button
             onClick={openModel}
             className="bg-orange-500 px-6 py-2 font-medium rounded-lg
            hover:bg-black hover:text-orange-500 transition-all duration-200 ease-in"
           >
             Log in
-          </button>
+          </button> */}
 
           {/* our model componnets */}
           <Model isOpen={isModelOpen} onClose={closeModel} />

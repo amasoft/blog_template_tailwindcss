@@ -15,7 +15,10 @@ import Services from "./pages/Services";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import SingleBlog from "./pages/SingleBlog";
+
 import { QueryClient, QueryClientProvider } from "react-query";
+import WritePost from "./components/Admin/WritePost";
+import BlogPostForm from "./components/Admin/BlogPostForm";
 const queryClient = new QueryClient();
 const BASE_URL = "https://amatech-backend.onrender.com/";
 
@@ -43,6 +46,14 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/addpost",
+        element: <WritePost />,
+      },
+      {
+        path: "/addpostv2",
+        element: <BlogPostForm />,
       },
       {
         path: "/blogs/:id",
