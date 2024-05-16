@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaClock, FaUser } from "react-icons/fa6";
 import { useLoaderData } from "react-router-dom";
 import SideBar from "../components/SideBar";
+import DOMPurify from "dompurify";
 
 const SingleBlog = () => {
   const data = useLoaderData();
+  // const [displayContent, setDisplayContent] = useState("");
+
   console.log(1, data);
   console.log(JSON.stringify(data));
 
@@ -17,7 +20,11 @@ const SingleBlog = () => {
     reading_time,
     content,
   } = data.data;
-  console.log(0, title);
+  // setDisplayContent(content);
+  const formattedDate = new Date(1715815855170);
+  const newDate = formattedDate.toISOString().split("T")[0];
+
+  console.log("formattedDate2>>>", newDate);
   return (
     <div>
       <div className="py-40 bg-black text-center text-white px-4">
@@ -36,13 +43,17 @@ const SingleBlog = () => {
             </h2>
             <p className="mb-3 text-gray-600">
               <FaUser className="inline-flex items-center mr-2" />
-              {userName} | {published_date}
+              {userName} | {newDate}
             </p>
             <p className="mb-3 text-gray-600">
               <FaClock className="inline-flex items-center mr-2" />
               {reading_time}
             </p>
-            <p className="text-base text-gray-500 mb-6">{content}</p>
+            {/* <p className="text-base text-gray-500 mb-6">
+              {DOMPurify.sanitize(content)}
+              {dangerouslySetInnerHTML={{ __html: displayContent }}}
+            </p> */}
+            <div dangerouslySetInnerHTML={{ __html: content }} />
           </div>
         </div>
         <div className="lg:w-1/2">

@@ -34,3 +34,9 @@
 .active-button {
   color: #fc3c1a;
 }
+.DraftEditor-root {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #eee;
+  min-height: 200px; /* Adjust height as needed */
+}
