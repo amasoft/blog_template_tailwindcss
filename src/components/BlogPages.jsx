@@ -11,8 +11,8 @@ const BlogPages = () => {
   const [currentPage, setCurrentpage] = useState(1);
   const [selectedCategory, setselectedcategory] = useState(null);
   const [activeCategory, setActiveCategory] = useState(null);
-  // const BASE_URL = "https://amatech-backend.onrender.com/";
-  const BASE_URL = "http://localhost:3009/";
+  const BASE_URL = "https://amatech-backend.onrender.com/";
+  // const BASE_URL = "http://localhost:3009/";
   useEffect(() => {
     function fetchBlogs() {
       axios
