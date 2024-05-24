@@ -24,13 +24,7 @@ const Blogcards = ({ blogs, currentPage, selectedCategory, pageSize }) => {
           className="p-5 shadow-lg rounded cursor-pointer"
         >
           <div>
-            <img
-              src={
-                "https://static.vecteezy.com/system/resources/previews/037/104/908/non_2x/blog-grey-scale-icon-vector.jpg"
-              }
-              alt="banner"
-              className="w-full"
-            />
+            <img src={blog.post_picture} alt="banner" className="w-full" />
           </div>
           <h3 className="mt-4 mb-2 font-bold hover:text-blue-600 cursor-pointer">
             {blog.title}

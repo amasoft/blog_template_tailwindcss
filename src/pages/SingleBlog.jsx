@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaClock, FaUser } from "react-icons/fa6";
 import { useLoaderData } from "react-router-dom";
 import SideBar from "../components/SideBar";
 import DOMPurify from "dompurify";
+import NoPost from "../components/Admin/NoPost";
+import CommentsPost from "../components/Admin/CommentsPost";
+import BlogPostForm from "../components/Admin/BlogPostForm";
+import BlogPostComments from "../components/Admin/BlogPostComments";
+import axios from "axios";
+import CommentWrite from "../components/CommentWrite";
 
 const SingleBlog = () => {
   const data = useLoaderData();
   // const [displayContent, setDisplayContent] = useState("");
-
-  console.log(1, data);
-  console.log(JSON.stringify(data));
+  var postId = "664744a2d2aa440378cec43b";
 
   const {
     title,
@@ -21,10 +25,13 @@ const SingleBlog = () => {
     content,
   } = data.data;
   // setDisplayContent(content);
-  const formattedDate = new Date(1715815855170);
+  const formattedDate = new Date(parseInt(published_date));
   const newDate = formattedDate.toISOString().split("T")[0];
 
   console.log("formattedDate2>>>", newDate);
+  if (!data.length > 0) {
+    console.log("amadi,>>");
+  }
   return (
     <div>
       <div className="py-40 bg-black text-center text-white px-4">
@@ -60,6 +67,8 @@ const SingleBlog = () => {
           <SideBar />
         </div>
       </div>
+      <BlogPostForm />
+      <CommentWrite />
     </div>
   );
 };

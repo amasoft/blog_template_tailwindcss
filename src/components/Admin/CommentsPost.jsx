@@ -4,7 +4,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import DOMPurify from "dompurify";
 import axios from "axios";
 
-const WritePost = () => {
+const CommentsPost = () => {
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [author, setAuthor] = useState("");
@@ -120,4 +120,4 @@ const WritePost = () => {
   );
 };
 
-export default WritePost;
+export default CommentsPost;
