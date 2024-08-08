@@ -62,13 +62,16 @@ const SingleBlog = () => {
             </p> */}
             <div dangerouslySetInnerHTML={{ __html: content }} />
           </div>
+          <BlogPostForm />
+
+          <CommentWrite />
         </div>
         <div className="lg:w-1/2">
           <SideBar />
         </div>
       </div>
-      <BlogPostForm />
-      <CommentWrite />
+      {/* <BlogPostForm /> */}
+      {/* <CommentWrite /> */}
     </div>
   );
 };

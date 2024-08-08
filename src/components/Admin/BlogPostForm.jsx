@@ -28,7 +28,7 @@ const BlogPostForm = () => {
     }
   };
   return (
-    <div className="max-w-xl mx-auto mt-11 border-solid border-4 box-shadow border-indigo-600 px-7 mb-5">
+    <div className="max-w-xl mx-auto mt-11 border-solid border-4 box-shadow border-indigo-600 px-4 mb-5">
       <h1 className="text-3xl font-bold mb-4">Add Comments</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>

@@ -20,7 +20,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import WritePost from "./components/Admin/WritePost";
 import BlogPostForm from "./components/Admin/BlogPostForm";
 const queryClient = new QueryClient();
-const BASE_URL = "https://amatech-backend.onrender.com/";
+const BASE_URL = "https://amatechbackend-production.up.railway.app/";
+// const BASE_URL = "https://amatech-backend.onrender.com/";
 // const BASE_URL = "http://localhost:3009/";
 
 const router = createBrowserRouter([

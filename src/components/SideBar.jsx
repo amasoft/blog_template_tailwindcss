@@ -47,7 +47,7 @@ const SideBar = () => {
       </div>
       {/* popular blogs */}
       <div>
-        <h3 className="text-2xl font-semibold px-4 mt-8">Popular Blogs</h3>
+        {/* <h3 className="text-2xl font-semibold px-4 mt-8">Popular Blogs</h3> */}
         <div>
           {popularBlogs.slice(6, 10).map((blog) => (
             <div

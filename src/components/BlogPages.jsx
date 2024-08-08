@@ -4,6 +4,7 @@ import Pagenation from "./Pagenation";
 import CategorySelection from "./CategorySelection";
 import SideBar from "./SideBar";
 import axios from "axios";
+import Widget from "./Widget";
 
 const BlogPages = () => {
   const [blogs, setBlogs] = useState([]);
@@ -11,8 +12,9 @@ const BlogPages = () => {
   const [currentPage, setCurrentpage] = useState(1);
   const [selectedCategory, setselectedcategory] = useState(null);
   const [activeCategory, setActiveCategory] = useState(null);
-  const BASE_URL = "https://amatech-backend.onrender.com/";
+  // const BASE_URL = "https://amatech-backend.onrender.com/";
   // const BASE_URL = "http://localhost:3009/";
+  const BASE_URL = "https://amatechbackend-production.up.railway.app/";
   useEffect(() => {
     function fetchBlogs() {
       axios
@@ -45,13 +47,13 @@ const BlogPages = () => {
   return (
     <div>
       {/* category sectio */}
-      <div>
+      {/* <div>
         <CategorySelection
           onSelectCategory={handleCategoryChange}
           selectedCategory={selectedCategory}
           activeCategory={activeCategory}
         />
-      </div>
+      </div> */}
       {/* blogs  cards section*/}
       <div className="flex flex-col lg:flex-row gap-12">
         <Blogcards
@@ -60,10 +62,16 @@ const BlogPages = () => {
           selectedCategory={selectedCategory}
           pageSize={pageSize}
         />
+
+        {/* <Widget />
+        <Widget />
+        <Widget />
+        <Widget />
+        <Widget /> */}
         {/* sidebar component */}
-        <div>
+        {/* <div>
           <SideBar />
-        </div>
+        </div> */}
       </div>
       {/* pagenation */}
       <div>
