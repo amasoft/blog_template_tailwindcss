@@ -12,9 +12,9 @@ const BlogPages = () => {
   const [currentPage, setCurrentpage] = useState(1);
   const [selectedCategory, setselectedcategory] = useState(null);
   const [activeCategory, setActiveCategory] = useState(null);
-  // const BASE_URL = "https://amatech-backend.onrender.com/";
+  const BASE_URL = "https://amatech-backend.onrender.com/";
   // const BASE_URL = "http://localhost:3009/";
-  const BASE_URL = "https://amatechbackend-production.up.railway.app/";
+  // const BASE_URL = "https://amatechbackend-production.up.railway.app/";
   useEffect(() => {
     function fetchBlogs() {
       axios
@@ -22,9 +22,9 @@ const BlogPages = () => {
         .get(`${BASE_URL}api/v1/post/`)
         .then((response) => {
           const data = response.data.data;
-          console.log("blog");
-          console.log(data);
-          console.log(9, data);
+          // console.log("blog");
+          // console.log(data);
+          // console.log(9, data);
           setBlogs(data); // Assuming setBlogs updates state
         })
         .catch((error) => {

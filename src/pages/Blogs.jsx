@@ -12,7 +12,7 @@ const Blogs = () => {
       <div>
         <BlogPages />
       </div>
-    </div>
+       </div>
   );
 };
 
