@@ -5,26 +5,20 @@ import CategorySelection from "./CategorySelection";
 import SideBar from "./SideBar";
 import axios from "axios";
 import Widget from "./Widget";
-
+import api from "../service/api.js";
 const BlogPages = () => {
   const [blogs, setBlogs] = useState([]);
   const pageSize = 12;
   const [currentPage, setCurrentpage] = useState(1);
   const [selectedCategory, setselectedcategory] = useState(null);
   const [activeCategory, setActiveCategory] = useState(null);
-  const BASE_URL = "https://amatech-backend.onrender.com/";
-  // const BASE_URL = "http://localhost:3009/";
-  // const BASE_URL = "https://amatechbackend-production.up.railway.app/";
+
   useEffect(() => {
     function fetchBlogs() {
-      axios
-        // .get(`http://localhost:3009/api/v1/post/`)
-        .get(`${BASE_URL}api/v1/post/`)
+      api
+        .get(`/api/v1/post/`)
         .then((response) => {
           const data = response.data.data;
-          // console.log("blog");
-          // console.log(data);
-          // console.log(9, data);
           setBlogs(data); // Assuming setBlogs updates state
         })
         .catch((error) => {
@@ -34,7 +28,7 @@ const BlogPages = () => {
     fetchBlogs();
     // }, [currentPage, pageSize, selectedCategory]);
   }, [currentPage, pageSize, selectedCategory]);
-  console.log(blogs);
+  // console.log(blogs);
   // page changing btn
   const handlePageChange = (pageNumber) => {
     setCurrentpage(pageNumber);
@@ -55,7 +49,7 @@ const BlogPages = () => {
         />
       </div> */}
       {/* blogs  cards section*/}
-      <div className="flex flex-col lg:flex-row gap-12">
+      <div className="flex flex-col lg:flex-row gap-12 mt-9">
         <Blogcards
           blogs={blogs}
           currentPage={currentPage}

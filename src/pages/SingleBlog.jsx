@@ -17,7 +17,7 @@ const SingleBlog = () => {
 
   const {
     title,
-    image,
+    post_picture,
     category,
     userName,
     published_date,
@@ -28,47 +28,50 @@ const SingleBlog = () => {
   const formattedDate = new Date(parseInt(published_date));
   const newDate = formattedDate.toISOString().split("T")[0];
 
-  console.log("formattedDate2>>>", newDate);
+  console.log("arinxe>>>>>>" + post_picture);
   if (!data.length > 0) {
     console.log("amadi,>>");
   }
   return (
     <div>
-      <div className="py-40 bg-black text-center text-white px-4">
+      {/* <div className="py-40 bg-black text-center text-white px-4">
         <h2 className="text-5xl lg:text-7xl  text-center leading-snug font-bold mb-5">
           single blog page{" "}
         </h2>
-      </div>
+      </div> */}
       {/* singl blog */}
 
-      <div className="max-w-7xl mx-auto my-12 flex flex-col md:flex-row ">
+      <div className="max-w-7xl mx-auto my-12 flex flex-col md:flex-row mt-28 ">
         <div className="lg:w-3/4 mx-auto">
           <div>
-            <img src={"image"} alt="" className="w-full mx-auto rounded" />
             <h2 className=" text-3xl mt-8 font-bold mb-4 text-blue-500 cursor-pointer">
               {title}
             </h2>
-            <p className="mb-3 text-gray-600">
-              <FaUser className="inline-flex items-center mr-2" />
-              {userName} | {newDate}
-            </p>
-            <p className="mb-3 text-gray-600">
-              <FaClock className="inline-flex items-center mr-2" />
-              {reading_time}
-            </p>
+            <img src={post_picture} alt="" className="w-full mx-auto rounded" />
+            <div className="flex justify-between items-center mb-3 text-gray-600 mt-4">
+              <div className="flex items-center">
+                <FaUser className="inline-flex items-center mr-2" />
+                <span>
+                  {userName} | {newDate}
+                </span>
+              </div>
+              <div className="flex items-center">
+                <FaClock className="inline-flex items-center mr-2" />
+                <span>{reading_time}</span>
+              </div>
+            </div>
+
             {/* <p className="text-base text-gray-500 mb-6">
               {DOMPurify.sanitize(content)}
               {dangerouslySetInnerHTML={{ __html: displayContent }}}
             </p> */}
             <div dangerouslySetInnerHTML={{ __html: content }} />
           </div>
-          <BlogPostForm />
+          {/* <BlogPostForm />
 
-          <CommentWrite />
+          <CommentWrite /> */}
         </div>
-        <div className="lg:w-1/2">
-          <SideBar />
-        </div>
+        <div className="lg:w-1/2">{/* <SideBar /> */}</div>
       </div>
       {/* <BlogPostForm /> */}
       {/* <CommentWrite /> */}

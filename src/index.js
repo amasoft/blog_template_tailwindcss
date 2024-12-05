@@ -17,12 +17,16 @@ import Contact from "./pages/Contact";
 import SingleBlog from "./pages/SingleBlog";
 
 import { QueryClient, QueryClientProvider } from "react-query";
-import WritePost from "./components/Admin/WritePost";
-import BlogPostForm from "./components/Admin/BlogPostForm";
+// import WritePost from "./components/Admin/WritePost";
+// import BlogPostForm from "./components/Admin/BlogPostForm";
+import Addpost from "./components/Admincontrol/Addpost";
+import EditPost from "./components/Admincontrol/EditPost";
+// import
 const queryClient = new QueryClient();
 // const BASE_URL = "https://amatechbackend-production.up.railway.app/";
-const BASE_URL = "https://amatech-backend.onrender.com/";
-// const BASE_URL = "http://localhost:3009/";
+// const BASE_URL = "https://amatech-backend.onrender.com/";
+// const BASE_URL = "https://amatechblogbackend.vercel.app/";
+const BASE_URL = "http://localhost:3006/";
 
 const router = createBrowserRouter([
   {
@@ -49,13 +53,25 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      // {
+      //   path: "/addpost",
+      //   element: <WritePost />,
+      // },
+      // {
+      //   path: "/addpostv2",
+      //   element: <BlogPostForm />,
+      // },
+      // {
+      //   path: "/newpost",
+      //   element: <BlogPostForm />,
+      // },
       {
-        path: "/addpost",
-        element: <WritePost />,
+        path: "/createpost",
+        element: <Addpost />,
       },
       {
-        path: "/addpostv2",
-        element: <BlogPostForm />,
+        path: "/editpost",
+        element: <EditPost />,
       },
       {
         path: "/blogs/:id",

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 const Banner = () => {
   return (
-    <div className="px-4 py-32 bg-black max-auto ">
-      <div className="text-white text-center">
+    <div className="px-4 py-2 bg-blue-800 max-auto ">
+      <div className="text-white text-center hidden">
         <h1 className="text-5xl lg:text-7xl text-white text-center leading-snug font-bold mb-5">
           welcome to our blog
         </h1>

@@ -13,7 +13,7 @@ const BlogPostForm = () => {
     try {
       //   // Make POST request to your backend endpoint
       const response = await axios.post(
-        "http://localhost:3009/api/v1/comment/",
+        "http://localhost:3006/api/v1/comment/",
         {
           user,
           user_comment: userComment,

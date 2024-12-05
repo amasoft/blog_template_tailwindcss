@@ -30,9 +30,9 @@ const Navbar = () => {
   };
   return (
     <header className="bg-black text-white fixed top-0 left-0 right-0">
-      <nav className="px-4 py-4 max-w-7xl mx-auto flex justify-between items-center">
+      <nav className="px-4 py-6 max-w-7xl mx-auto flex justify-between items-center">
         <a href="/" className="text-xl font-bold text-white">
-          Ama<span className="text-orange-400">PAT</span>
+          AMA<span className="text-orange-400">PAT</span>
         </a>
         {/* nav items */}
         <ul className="md:flex gap-12 text-lg hidden">

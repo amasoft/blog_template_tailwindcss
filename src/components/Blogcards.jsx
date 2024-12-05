@@ -3,16 +3,16 @@ import { FaUser } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Blogcards = ({ blogs, currentPage, selectedCategory, pageSize }) => {
-  console.log("Blogcards");
-  console.log(JSON.stringify(blogs));
+  // console.log("Blogcards");
+  // console.log(JSON.stringify(blogs));
   const filteredBlos = blogs
     .filter((blog) => !selectedCategory || blog.category === selectedCategory)
     .slice((currentPage - 1) * pageSize, currentPage * pageSize);
-  console.log("filteredBlos" + filteredBlos.length);
+  // console.log("filteredBlos" + filteredBlos.length);
   if (!Array.isArray(blogs)) {
     return <div>No blogs to display</div>;
   }
-  console.log(5, JSON.stringify(filteredBlos));
+  // console.log(5, JSON.stringify(filteredBlos));
   const timeAgoInMinutes = (timestamp) => {
     const now = Date.now(); // Get the current time in milliseconds
     const differenceInMillis = now - timestamp; // Calculate the difference
@@ -85,7 +85,15 @@ const Blogcards = ({ blogs, currentPage, selectedCategory, pageSize }) => {
           <div className="p-4">
             <h1 className={` font-bold mb-2 text-blue-300`}>{blog.title}</h1>
             <p className={`${sharedClasses.textSecondary} mb-4`}>
-              {text.substring(0, text.lastIndexOf(" ", 79)) + "..."}
+              {/* {blog.content.substring(0, text.lastIndexOf(" ", 79)) + "..."} */}
+              <div
+                dangerouslySetInnerHTML={{
+                  __html:
+                    blog.content.substring(0, text.lastIndexOf(" ", 79)) +
+                    "...",
+                }}
+              ></div>
+              {/* {blog.content.substring(0, text.lastIndexOf(" ", 79)) + "..."} */}
             </p>
             <div
               className={`flex items-center justify-between text-sm ${sharedClasses.textMuted}`}

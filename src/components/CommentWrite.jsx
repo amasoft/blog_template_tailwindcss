@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-const BASE_URL = "http://localhost:3009/";
+const BASE_URL = "http://localhost:3006/";
 
 const CommentWrite = () => {
   const [comments, setComments] = useState([]);
