@@ -16,10 +16,10 @@ const Navbar = () => {
   };
   const navItems = [
     { path: "/", link: "Home" },
-    { path: "/services", link: "Services" },
+    // { path: "/services", link: "Services" },
     { path: "/blogs", link: "Blogs" },
-    { path: "/contact", link: "Contact" },
-    { path: "/about", link: "About" },
+    // { path: "/contact", link: "Contact" },
+    // { path: "/about", link: "About" },
   ];
   const openModel = () => {
     setisModelOpen(true);
@@ -51,7 +51,7 @@ const Navbar = () => {
         </ul>
         {/* menu icons */}
         <div className="text-white flex gap-4 items-center ">
-          <a href="/" className="hover:text-orange-500">
+          {/* <a href="/" className="hover:text-orange-500">
             <FaFacebook />
           </a>
           <a href="/" className="hover:text-orange-500">
@@ -59,7 +59,7 @@ const Navbar = () => {
           </a>
           <a href="/" className="hover:text-orange-500">
             <FaTwitter />
-          </a>
+          </a> */}
           {/* <button
             onClick={openModel}
             className="bg-orange-500 px-6 py-2 font-medium rounded-lg
